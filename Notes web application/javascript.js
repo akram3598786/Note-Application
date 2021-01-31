@@ -60,7 +60,7 @@ function show_notes() {
 
         html += ` <div class="card note_card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title"> ${element.title}</h5>
+      <h5 class="card-title">>N${index}- ${element.title}</h5>
       <p class="card-text"> ${element.text} </p>
       <button id= "${index}"  type="submit" class="btn btn-primary del_node" onclick="delete_notes(${index})" >Delete Note</button>
     </div>
