@@ -1,17 +1,12 @@
-console.log("Welcome Akky in your new chalange :-");
-
 
 show_notes(); // to show all notes on every refersh page
 
 // ===================== Storing note array from textarea to localstorage =========================================
 
 let addnote_btn = document.getElementById("addnote_btn");
-
 addnote_btn.addEventListener("click", function (e) {
-
     let note_text = document.getElementById("note_text");
-    let note_title =  document.getElementById("note_title");
- 
+    let note_title =  document.getElementById("note_title"); 
     let notes = localStorage.getItem("notes");
 
     if (notes == null) {
@@ -33,20 +28,14 @@ addnote_btn.addEventListener("click", function (e) {
     note_text.value = "";
     note_title.value = "";
     console.log(noteobj);
-
-
     show_notes(); // to show notes after storing into localstorage
-
 });
 
 // ===================== Show All Notes Function =========================================
 
 function show_notes() {
-
     let note_element = document.getElementById("note_element");
-
     let html = "";
-
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         noteobj = [];
@@ -66,7 +55,6 @@ function show_notes() {
     </div>
   </div> 
   `
-
     });
 
     if (noteobj.lenght != 0) {
@@ -94,22 +82,17 @@ function delete_notes(index) {
     noteobj.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(noteobj));
     show_notes();
-
 }
 
 
 // ===================== Search for Notes Function =========================================
 
 let search = document.getElementById("search_text")
-// let search_btn = document.getElementById("search_btn")
-
-
 search.addEventListener("input", function () {
     let search_text = search.value;
     let note_card = document.getElementsByClassName("note_card");
 
     Array.from(note_card).forEach(element => {
-
         let note_text = element.getElementsByTagName("p")[0].innerText;
         let note_element = document.getElementById("note_element");
 
